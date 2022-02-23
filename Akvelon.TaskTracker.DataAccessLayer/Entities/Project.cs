@@ -10,11 +10,11 @@ public class Project
 {
     public Project()
     {
-        Tasks = new List<Task>();
+        Tasks = new List<ProjectTask>();
     }
     
     public int Id { get; set; }
-    public List<Task> Tasks { get; set; }
+    public List<ProjectTask> Tasks { get; set; }
 
     public string Name { get; set; }
     

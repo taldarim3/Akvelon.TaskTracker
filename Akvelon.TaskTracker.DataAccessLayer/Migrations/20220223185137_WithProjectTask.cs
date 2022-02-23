@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class WithProjectTask : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

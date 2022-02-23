@@ -3,7 +3,7 @@
 /// <summary>
 /// This class defines the entity of Task
 /// </summary>
-public class Task
+public class ProjectTask
 {
     public int Id { get; set; }
 

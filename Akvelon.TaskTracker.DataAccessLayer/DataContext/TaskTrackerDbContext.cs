@@ -1,6 +1,6 @@
 ﻿using Akvelon.TaskTracker.DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
-using Task = Akvelon.TaskTracker.DataAccessLayer.Entities.Task;
+using Task = Akvelon.TaskTracker.DataAccessLayer.Entities.ProjectTask;
 
 namespace Akvelon.TaskTracker.DataAccessLayer.DataContext;
 
@@ -14,7 +14,7 @@ public class TaskTrackerDbContext : DbContext
     {
     }
 
-    public DbSet<Task> Tasks { get; set; }
+    public DbSet<ProjectTask> Tasks { get; set; }
     public DbSet<Project> Projects { get; set; }
     
 }

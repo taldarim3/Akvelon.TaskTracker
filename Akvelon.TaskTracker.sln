@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akvelon.TaskTracker.Present
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akvelon.TaskTracker.DataAccessLayer", "Akvelon.TaskTracker.DataAccessLayer\Akvelon.TaskTracker.DataAccessLayer.csproj", "{C5AF0733-99D6-48B8-BE69-35B55FAE5409}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akvelon.TaskTracker.BusinessLogicLayer", "Akvelon.TaskTracker.BusinessLogicLayer\Akvelon.TaskTracker.BusinessLogicLayer.csproj", "{1AD8A4AD-EC3A-4B0E-AECB-E30B90786211}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C5AF0733-99D6-48B8-BE69-35B55FAE5409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AF0733-99D6-48B8-BE69-35B55FAE5409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AF0733-99D6-48B8-BE69-35B55FAE5409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AD8A4AD-EC3A-4B0E-AECB-E30B90786211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD8A4AD-EC3A-4B0E-AECB-E30B90786211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD8A4AD-EC3A-4B0E-AECB-E30B90786211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD8A4AD-EC3A-4B0E-AECB-E30B90786211}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
