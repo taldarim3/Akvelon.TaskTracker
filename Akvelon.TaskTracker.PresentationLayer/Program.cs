@@ -1,4 +1,5 @@
 using Akvelon.TaskTracker.DataAccessLayer.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 public class Program
 {
@@ -20,10 +21,15 @@ public class Startup
         Configuration = configuration;
     }
     private IConfiguration Configuration { get; }
-    
-    public void ConfigureServices(IServiceCollection services)
 
-        => services.AddDbContext<TaskTrackerDbContext>();
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Adding database context
+        services.AddDbContext<TaskTrackerDbContext>(options => 
+            options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
+    }
+
+        
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {

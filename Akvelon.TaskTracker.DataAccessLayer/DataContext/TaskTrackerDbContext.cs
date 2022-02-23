@@ -17,9 +17,5 @@ public class TaskTrackerDbContext : DbContext
     public DbSet<Task> Tasks { get; set; }
     public DbSet<Project> Projects { get; set; }
     
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=usersdb;Username=postgres;Password=Jopa18102001");
-    }
 }
 
