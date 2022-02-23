@@ -22,7 +22,7 @@ public interface IProjectService
 
     public Task DeleteProject(int id, CancellationToken cancellationToken);
     
-    public Task UpdateProject(int projectId, string name, DateTime startDate, DateTime endDate, 
+    public Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate, 
          ProjectStatus status, int priority, CancellationToken cancellationToken);
 
 }
