@@ -15,14 +15,13 @@ public interface IProjectService
         CancellationToken cancellationToken,
         ProjectStatus status = ProjectStatus.NotStarted,
         int priority = 1);
-    
+
     public Task<Project> GetProjectById(int id, CancellationToken cancellationToken);
 
     public Task<IList<Project>> GetAllProjects(CancellationToken cancellationToken);
 
     public Task DeleteProject(int id, CancellationToken cancellationToken);
-    
-    public Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate, 
-         ProjectStatus status, int priority, CancellationToken cancellationToken);
 
+    public Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate,
+        ProjectStatus status, int priority, CancellationToken cancellationToken);
 }

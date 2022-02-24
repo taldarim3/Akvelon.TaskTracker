@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Akvelon.TaskTracker.BusinessLogicLayer.Services.Implementations;
 
-public class ProjectService: IProjectService
+public class ProjectService : IProjectService
 {
     private readonly TaskTrackerDbContext _context;
 
@@ -16,10 +16,10 @@ public class ProjectService: IProjectService
         _context = context;
     }
 
-    public async Task<int> CreateProject(string name, DateTime startDate, DateTime complitionDate , CancellationToken cancellationToken,
+    public async Task<int> CreateProject(string name, DateTime startDate, DateTime complitionDate,
+        CancellationToken cancellationToken,
         ProjectStatus status = ProjectStatus.NotStarted, int priority = 1)
     {
-        
         if (startDate > complitionDate)
         {
             throw new InvalidDateTimeException("The start date cannot be later than the end date");
@@ -51,8 +51,7 @@ public class ProjectService: IProjectService
 
         return project;
     }
-    
-    
+
 
     public async Task<IList<Project>> GetAllProjects(CancellationToken cancellationToken)
     {
@@ -64,19 +63,18 @@ public class ProjectService: IProjectService
 
         return projects;
     }
-    
-    
+
 
     public async Task DeleteProject(int id, CancellationToken cancellationToken)
     {
         var project = await GetProjectById(id, cancellationToken);
-        _context.Projects.Remove( project);
+        _context.Projects.Remove(project);
         await _context.SaveChangesAsync(cancellationToken);
     }
-    
-    
 
-    public async Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate, ProjectStatus status, int priority,
+
+    public async Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate,
+        ProjectStatus status, int priority,
         CancellationToken cancellationToken)
     {
         if (startDate > endDate)
@@ -90,6 +88,5 @@ public class ProjectService: IProjectService
         project.Priority = priority;
 
         await _context.SaveChangesAsync(cancellationToken);
-
     }
 }
