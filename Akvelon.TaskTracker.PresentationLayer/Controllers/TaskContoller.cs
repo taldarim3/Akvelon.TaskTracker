@@ -72,14 +72,14 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     GET: /localhost/tasksById
+    ///     GET: /localhost/tasks/{id}
     /// 
     /// </summary>
     /// <response code="200">Successfully received</response>
     /// <response code="404">If task not found</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [HttpGet("tasksById")]
+    [HttpGet("tasks/{id}")]
     public async Task<ProjectTask> GetTaskById(int id, CancellationToken cancellationToken)
     {
         return await _service.GetTaskById(id, cancellationToken);
