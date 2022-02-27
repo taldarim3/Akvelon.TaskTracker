@@ -35,12 +35,12 @@ namespace Akvelon.TaskTracker.Controllers
         /// <remarks>
         /// Sample request:
         /// 
-        ///     POST: /localhost/project
+        ///     POST: /localhost/projects
         /// 
         /// </remarks>
         /// <response code="200">Successfully created</response>
         /// <response code="400">If start date after completion date</response>
-        [HttpPost("project")]
+        [HttpPost("projects")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<int> CreateProject(string name, DateTime startDate, DateTime endDate,
@@ -58,14 +58,14 @@ namespace Akvelon.TaskTracker.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET: /localhost/project
+        ///     GET: /localhost/projects
         ///
         /// </remarks>
         /// <response code="200">Successfully received</response>
         /// <response code="404">If project not found</response>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpGet("project")]
+        [HttpGet("projects")]
         public async Task<Project> GetProjectById(int id, CancellationToken cancellationToken)
         {
             return await _serviceProject.GetProjectById(id, cancellationToken);
@@ -105,7 +105,7 @@ namespace Akvelon.TaskTracker.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT: /localhost/project
+        ///     PUT: /localhost/projects
         ///
         /// </remarks>
         /// <response code="200">Successfully updated</response>
@@ -114,7 +114,7 @@ namespace Akvelon.TaskTracker.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [HttpPut("project")]
+        [HttpPut("projects")]
         public async Task EditProject(int projectId, string name, DateTime startDate, DateTime endDate,
             ProjectStatus status, int priority, CancellationToken cancellationToken)
         {
@@ -130,14 +130,14 @@ namespace Akvelon.TaskTracker.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE: /localhost/project
+        ///     DELETE: /localhost/projects
         /// 
         /// </remarks>
         /// <response code="200">Successfully deleted</response>
         /// <response code="404">If project not found</response>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpDelete("project")]
+        [HttpDelete("projects")]
         public async Task DeleteProject(int id, CancellationToken cancellationToken)
         {
             await _serviceProject.DeleteProject(id, cancellationToken);

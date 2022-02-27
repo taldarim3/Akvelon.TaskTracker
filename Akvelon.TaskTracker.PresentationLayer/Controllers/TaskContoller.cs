@@ -29,12 +29,12 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     POST: /localhost/task
+    ///     POST: /localhost/tasks
     /// 
     /// </summary>
     /// <response code="200">Successfully created</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [HttpPost("task")]
+    [HttpPost("tasks")]
     public async Task<int> CreateTask(string name, string description, int priority, int projectId,
         ProjectTaskStatus status,
         CancellationToken cancellationToken)
@@ -72,14 +72,14 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     GET: /localhost/task
+    ///     GET: /localhost/tasks
     /// 
     /// </summary>
     /// <response code="200">Successfully received</response>
     /// <response code="404">If task not found</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [HttpGet("task")]
+    [HttpGet("tasks")]
     public async Task<ProjectTask> GetTaskById(int id, CancellationToken cancellationToken)
     {
         return await _service.GetTaskById(id, cancellationToken);
@@ -94,14 +94,14 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     GET: /localhost/project/task
+    ///     GET: /localhost/project/tasks
     /// 
     /// </summary>
     /// <response code="200">Successfully received</response>
     /// <response code="404">If task not found</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [HttpGet("project/task")]
+    [HttpGet("project/tasks")]
     public async Task<IList<ProjectTask>> GetTasksByProject(int projectId, CancellationToken cancellationToken)
     {
         return await _service.GetTasksByProject(projectId, cancellationToken);
@@ -120,14 +120,14 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     PUT: /localhost/task
+    ///     PUT: /localhost/tasks
     /// 
     /// </summary>
     /// <response code="200">Successfully updated</response>
     /// <response code="404">If task not found</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [HttpPut("task")]
+    [HttpPut("tasks")]
     public async Task UpdateTask(int taskId, string name, string description, int projectId, int priority,
         ProjectTaskStatus status,
         CancellationToken cancellationToken)
@@ -143,14 +143,14 @@ public class TaskController : ControllerBase
     /// <summary>
     /// Sample request:
     ///
-    ///     DELETE: /localhost/task
+    ///     DELETE: /localhost/tasks
     /// 
     /// </summary>
     /// <response code="200">Successfully deleted</response>
     /// <response code="404">If task not found</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [HttpDelete("task")]
+    [HttpDelete("tasks")]
     public async Task DeleteTask(int id, CancellationToken cancellationToken)
     {
         await _service.DeleteTask(id, cancellationToken);
