@@ -51,7 +51,7 @@ namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.Task", b =>
+            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.ProjectTask", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,7 +83,7 @@ namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.Task", b =>
+            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.ProjectTask", b =>
                 {
                     b.HasOne("Akvelon.TaskTracker.DataAccessLayer.Entities.Project", "Project")
                         .WithMany("Tasks")

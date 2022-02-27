@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
 {
     [DbContext(typeof(TaskTrackerDbContext))]
-    [Migration("20220223104838_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220223185137_WithProjectTask")]
+    partial class WithProjectTask
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,7 +53,7 @@ namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.Task", b =>
+            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.ProjectTask", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace Akvelon.TaskTracker.DataAccessLayer.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.Task", b =>
+            modelBuilder.Entity("Akvelon.TaskTracker.DataAccessLayer.Entities.ProjectTask", b =>
                 {
                     b.HasOne("Akvelon.TaskTracker.DataAccessLayer.Entities.Project", "Project")
                         .WithMany("Tasks")
