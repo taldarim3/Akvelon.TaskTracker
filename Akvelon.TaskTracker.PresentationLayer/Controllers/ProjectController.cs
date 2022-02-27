@@ -58,14 +58,14 @@ namespace Akvelon.TaskTracker.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET: /localhost/projects
+        ///     GET: /localhost/projectsById
         ///
         /// </remarks>
         /// <response code="200">Successfully received</response>
         /// <response code="404">If project not found</response>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpGet("projects")]
+        [HttpGet("projectsById")]
         public async Task<Project> GetProjectById(int id, CancellationToken cancellationToken)
         {
             return await _serviceProject.GetProjectById(id, cancellationToken);

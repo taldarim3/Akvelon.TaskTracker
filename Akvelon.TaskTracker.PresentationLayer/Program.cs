@@ -60,6 +60,8 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
+            
+            // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
